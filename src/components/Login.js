@@ -4,11 +4,13 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setIsAuth }) => {
+  const navigate = useNavigate();
   const loginWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
       // console.log(result);
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
+      navigate("/");
     });
   };
 

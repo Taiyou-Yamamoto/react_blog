@@ -18,3 +18,7 @@ nav a:hover {
     color: blueviolet;
 
 }
+
+nav a svg {
+  margin-right: 5px;
+}
