@@ -1,11 +1,23 @@
 import React from "react";
+import "./CreatePost.css";
+
 
 const CreatePost = () => {
+  const [titel, setTitle] = useState(second)
+
   return (
     <div className="createPostPage">
       <div className="postContainer">
         <h1>記事を投稿</h1>
-        div.input
+        <div className="inputPost">
+          <div>タイトル</div>
+          <input type="text" placeholder="タイトルを記入" />
+        </div>
+        <div className="inputPost">
+          <div>投稿</div>
+          <textarea placeholder="投稿内容を記入"></textarea>
+        </div>
+        <button className="postButton">投稿する</button>
       </div>
     </div>
   );
