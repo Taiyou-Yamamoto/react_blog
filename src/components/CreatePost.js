@@ -3,7 +3,7 @@ import "./CreatePost.css";
 
 
 const CreatePost = () => {
-  const [titel, setTitle] = useState(second)
+  // const [titel, setTitle] = useState(second)
 
   return (
     <div className="createPostPage">
