@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CreatePost.css";
-import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const [title, setTitle] = useState();
   const [postText, setPostText] = useState();
 
+  const navigate = useNavigate();
   const createPost = async () => {
     await addDoc(collection(db, "posts"), {
       title: title,
-      postText: postText,
+      postsText: postText,
       author: {
-        username: auth.currentUser.displayName,
-        id: auth.currentUser.uid,
+        username: auth.currentUser?.displayName || "匿名ユーザー",
+        id: auth.currentUser?.uid || "unknown",
       },
     });
+
+    navigate("/");
+
+    // if (auth.currentUser) {
+    //   try {
+    //     await addDoc(collection(db, "posts"), {
+    //       title: title,
+    //       postsText: postText,
+    //       author: {
+    //         username: auth.currentUser.displayName || "匿名ユーザー",
+    //         id: auth.currentUser.uid,
+    //       },
+    //     });
+    //     navigate("/");
+    //   } catch (error) {
+    //     console.error("投稿の作成中にエラーが発生しました:", error);
+    //   }
+    // } else {
+    //   console.error("ユーザーが認証されていません");
+    //   // 必要に応じてエラーメッセージをユーザーに表示するロジックを追加
+    // }
   };
 
   return (
