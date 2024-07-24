@@ -1,0 +1,30 @@
+.homePage{
+    width: 100%;
+    /* height: calc(100vh - 80px); */
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.postContetnts{
+    width: 600px;
+    height: auto;
+    max-height: 600px;
+    background-color: white;
+    box-shadow: 5px 9px 15px -5px rgb(66, 65, 65);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.postHeader h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.postTextContainer {
+    height: auto;
+    word-wrap: break-word;
+}
